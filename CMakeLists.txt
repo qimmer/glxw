@@ -45,6 +45,9 @@ add_custom_command(
     DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/include/GL/glcorearb.h
     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
 
+if(UNIX)
+add_definitions(-fPIC)
+endif()
 add_library(glxw STATIC ${CMAKE_CURRENT_BINARY_DIR}/src/glxw.c)
 
 # GLX
